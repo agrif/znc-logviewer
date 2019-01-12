@@ -1,0 +1,57 @@
+<? INC Header.tmpl ?>
+
+<? INC Breadcrumbs.tmpl ?>
+
+<style type="text/css">
+  table.log, table.log td {
+    background: WhiteSmoke;
+    color: black;
+    font-family: monospace;
+  }
+  table.log td {
+    padding: 0px;
+    word-wrap: break-word;
+    word-break: break-word;
+  }
+  table.log {
+    padding: 5px;
+  }
+  table.log td.log-lineno {
+    text-align: right;
+    vertical-align: text-top;
+    color: grey;
+    padding-right: 1em;
+  }
+  td.log-lineno:after {
+    content: attr(data-line-number);
+  }
+  div.log-formats {
+  }
+</style>
+
+<div class="log-formats">
+  Additional Formats:
+  <? LOOP LogFormats ?>
+  <a href="<? VAR url ?>"><? VAR name ?></a>
+  <? ENDLOOP ?>
+</div>
+
+<table class="log">
+  <tbody>
+    <? LOOP LogLines ?>
+    <tr>
+      <td class="log-lineno" data-line-number="<? VAR lineno ?>"><a id="L<? VAR lineno ?>"></a></td>
+      <td><? VAR line ?></td>
+    </tr>
+    <? ENDLOOP ?>
+  </tbody>
+</table>
+
+<div class="log-formats">
+  Additional Formats:
+  <? LOOP LogFormats ?>
+  <a href="<? VAR url ?>"><? VAR name ?></a>
+  <? ENDLOOP ?>
+</div>
+
+<? INC Footer.tmpl ?>

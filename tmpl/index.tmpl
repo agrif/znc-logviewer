@@ -1,0 +1,31 @@
+<? INC Header.tmpl ?>
+
+<? INC Breadcrumbs.tmpl ?>
+
+<style type="text/css">
+  td.filesize {
+    width: 50px;
+    text-align: right;
+  }
+</style>
+
+<div class="toptable">
+  <table class="data">
+    <thead>
+      <tr>
+        <td>Size</td>
+        <td>Name</td>
+      </tr>
+    </thead>
+    <tbody>
+      <? LOOP FileList ?>
+      <tr class="<? IF __EVEN__ ?>evenrow<? ELSE ?>oddrow<? ENDIF ?>">
+        <td class="filesize"><? VAR size ?></td>
+        <td><a href="<? VAR url ?>"><? VAR name ?></a></td>
+      </tr>
+      <? ENDLOOP ?>
+    </tbody>
+  </table>
+</div>
+
+<? INC Footer.tmpl ?>

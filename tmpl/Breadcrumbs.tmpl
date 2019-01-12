@@ -1,0 +1,14 @@
+<p>
+  <strong>Path</strong>:
+  [<a href="<? VAR breadcrumbs_root ?>">root</a>] /
+  <? LOOP Breadcrumbs ?>
+  <? IF last ?>
+  <strong><? VAR name ?></strong>
+  <? ELSE ?>
+  <a href="<? VAR url ?>"><? VAR name ?></a>
+  <? ENDIF ?>
+  <? IF type == dir ?> / <? ENDIF ?>
+  <? ENDLOOP ?>
+</p>
+
+<br>
