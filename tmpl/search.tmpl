@@ -1,0 +1,23 @@
+<? INC Header.tmpl ?>
+
+<? INC LogCss.tmpl ?>
+
+<? INC Breadcrumbs.tmpl ?>
+
+<? INC SearchBox.tmpl ?>
+
+<? IF error ?>
+<p><strong>Error:</strong> <? VAR error ?></p>
+<? ELSE ?>
+
+<? LOOP LogFiles ?>
+<br>
+<? INC Breadcrumbs.tmpl ?>
+<? INC LogLines.tmpl ?>
+<br>
+<hr>
+<? ENDLOOP LogFiles ?>
+
+<? ENDIF ?>
+
+<? INC Footer.tmpl ?>

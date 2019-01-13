@@ -1,0 +1,12 @@
+<table class="log">
+  <tbody>
+    <? LOOP LogLines ?>
+    <tr<? IF highlight ?> class="log-highlight"<? ENDIF highlight ?>>
+      <!-- <td class="log-lineno" data-line-number="<? VAR lineno ?>"></td> -->
+      <td><? VAR timestamp ESC=ASCII ?></td>
+      <td><? VAR nickname ESC=ASCII ?></td>
+      <td class="log-message"><a id="L<? VAR lineno ?>"></a><? VAR message ESC=ASCII ?></td>
+    </tr>
+    <? ENDLOOP LogLines ?>
+  </tbody>
+</table>

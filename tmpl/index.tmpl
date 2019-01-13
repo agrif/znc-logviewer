@@ -2,6 +2,8 @@
 
 <? INC Breadcrumbs.tmpl ?>
 
+<? INC SearchBox.tmpl ?>
+
 <style type="text/css">
   td.filesize {
     width: 50px;
@@ -23,7 +25,7 @@
         <td class="filesize"><? VAR size ?></td>
         <td><a href="<? VAR url ?>"><? VAR name ?></a></td>
       </tr>
-      <? ENDLOOP ?>
+      <? ENDLOOP FileList ?>
     </tbody>
   </table>
 </div>
